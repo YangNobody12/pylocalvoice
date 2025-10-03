@@ -1,4 +1,3 @@
-# TODO: Copy content from artifact "Package Initialization"
 """
 pyhmong - A professional Python library for Hmong language processing
 ======================================================================
@@ -18,8 +17,8 @@ https://pyhmong.readthedocs.io
 """
 
 __version__ = '0.1.0'
-__author__ = 'Your Name'
-__email__ = 'your.email@example.com'
+__author__ = 'YangNobody12'
+__email__ = 'yangnobody12@example.com'
 __license__ = 'MIT'
 
 from .core import (
@@ -66,4 +65,4 @@ if __name__ == '__main__':
     print(f"pyhmong version {__version__}")
     print(f"Author: {__author__}")
     print(f"License: {__license__}")
-    print("\nFor usage examples, see: https://github.com/yourusername/pyhmong")
+    print("\nFor usage examples, see: https://github.com/yangnobody12/pyhmong")

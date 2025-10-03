@@ -1,4 +1,3 @@
-# TODO: Copy content from artifact "Main Module"
 """
 pyhmong - A professional Python library for Hmong language processing
 =====================================================================
@@ -6,7 +5,7 @@ pyhmong - A professional Python library for Hmong language processing
 This library provides tools for working with the Hmong language, including
 text processing, romanization systems, and linguistic utilities.
 
-Author: Your Name
+Author: YangNobody12
 License: MIT
 Version: 0.1.0
 """

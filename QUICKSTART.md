@@ -181,15 +181,15 @@ pip install -e .  # if installing from source
 ## Resources
 
 - **Documentation**: https://pyhmong.readthedocs.io
-- **GitHub**: https://github.com/yourusername/pyhmong
-- **Issues**: https://github.com/yourusername/pyhmong/issues
+- **GitHub**: https://github.com/yangnobody12/pyhmong
+- **Issues**: https://github.com/yangnobody12/pyhmong/issues
 - **PyPI**: https://pypi.org/project/pyhmong
 
 ## Need Help?
 
 - 📖 Check the [full documentation](README.md)
-- 💬 Ask in [GitHub Discussions](https://github.com/yourusername/pyhmong/discussions)
-- 🐛 Report bugs in [Issues](https://github.com/yourusername/pyhmong/issues)
-- 📧 Email: your.email@example.com
+- 💬 Ask in [GitHub Discussions](https://github.com/yangnobody12/pyhmong/discussions)
+- 🐛 Report bugs in [Issues](https://github.com/yangnobody12/pyhmong/issues)
+- 📧 Email: yangnobody12@example.com
 
 Happy coding with pyhmong! 🎉

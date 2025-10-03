@@ -56,7 +56,7 @@ cd pyhmong
 3. Add the upstream repository:
 
 ```bash
-git remote add upstream https://github.com/ORIGINAL_OWNER/pyhmong.git
+git remote add upstream https://github.com/yangnobody12/pyhmong.git
 ```
 
 ## Development Setup

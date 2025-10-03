@@ -135,8 +135,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for information on how to contribute to p
 
 ## Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/pyhmong/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/pyhmong/discussions)
+- **Issues**: [GitHub Issues](https://github.com/yangnobody12/pyhmong/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/yangnobody12/pyhmong/discussions)
 
-[Unreleased]: https://github.com/yourusername/pyhmong/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/yourusername/pyhmong/releases/tag/v0.1.0
+[Unreleased]: https://github.com/yangnobody12/pyhmong/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/yangnobody12/pyhmong/releases/tag/v0.1.0

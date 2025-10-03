@@ -1,4 +1,3 @@
-# TODO: Copy content from artifact "Documentation"
 # pyhmong 🇱🇦
 
 [![PyPI version](https://badge.fury.io/py/pyhmong.svg)](https://badge.fury.io/py/pyhmong)
@@ -150,18 +149,18 @@ If you use this library in your research, please cite:
 
 ```bibtex
 @software{pyhmong,
-  author = {Your Name},
+  author = {YangNobody12},
   title = {pyhmong: A Python Library for Hmong Language Processing},
   year = {2025},
-  url = {https://github.com/yourusername/pyhmong}
+  url = {https://github.com/yangnobody12/pyhmong}
 }
 ```
 
 ## Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/pyhmong/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/pyhmong/discussions)
-- **Email**: your.email@example.com
+- **Issues**: [GitHub Issues](https://github.com/yangnobody12/pyhmong/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/yangnobody12/pyhmong/discussions)
+- **Email**: yangnobody12@example.com
 
 ## Changelog
 
@@ -185,7 +184,7 @@ pip install pyhmong
 ### From Source
 
 ```bash
-git clone https://github.com/yourusername/pyhmong.git
+git clone https://github.com/yangnobody12/pyhmong.git
 cd pyhmong
 pip install -e .
 ```
@@ -193,7 +192,7 @@ pip install -e .
 ### For Development
 
 ```bash
-git clone https://github.com/yourusername/pyhmong.git
+git clone https://github.com/yangnobody12/pyhmong.git
 cd pyhmong
 pip install -e ".[dev]"
 ```

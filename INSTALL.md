@@ -47,7 +47,7 @@ pip install pyhmong==0.1.0
 #### Using pip
 
 ```bash
-git clone https://github.com/yourusername/pyhmong.git
+git clone https://github.com/yangnobody12/pyhmong.git
 cd pyhmong
 pip install .
 ```
@@ -55,14 +55,14 @@ pip install .
 #### For Development
 
 ```bash
-git clone https://github.com/yourusername/pyhmong.git
+git clone https://github.com/yangnobody12/pyhmong.git
 cd pyhmong
 pip install -e ".[dev]"
 ```
 
 ### Method 3: Download and Install
 
-1. Download the latest release from [GitHub Releases](https://github.com/yourusername/pyhmong/releases)
+1. Download the latest release from [GitHub Releases](https://github.com/yangnobody12/pyhmong/releases)
 2. Extract the archive
 3. Navigate to the directory
 4. Install:
@@ -204,7 +204,7 @@ For contributing or developing pyhmong:
 ### Step 1: Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/pyhmong.git
+git clone https://github.com/yangnobody12/pyhmong.git
 cd pyhmong
 ```
 
@@ -517,9 +517,9 @@ print(dir(pyhmong))
 If you encounter issues:
 
 1. **Check Documentation**: [README.md](README.md)
-2. **Search Issues**: [GitHub Issues](https://github.com/yourusername/pyhmong/issues)
-3. **Ask Questions**: [GitHub Discussions](https://github.com/yourusername/pyhmong/discussions)
-4. **Contact**: your.email@example.com
+2. **Search Issues**: [GitHub Issues](https://github.com/yangnobody12/pyhmong/issues)
+3. **Ask Questions**: [GitHub Discussions](https://github.com/yangnobody12/pyhmong/discussions)
+4. **Contact**: yangnobody12@example.com
 
 ## Next Steps
 
