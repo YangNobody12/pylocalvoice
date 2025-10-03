@@ -12,7 +12,7 @@ License: MIT
 
 __version__ = '0.1.0'
 __author__ = 'YangNobody12'
-__email__ = 'yangnobody12@example.com'
+__email__ = 'pkorn8394@gmail.com'
 __license__ = 'MIT'
 
 import re

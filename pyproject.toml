@@ -10,10 +10,10 @@ readme = "README.md"
 requires-python = ">=3.7"
 license = "MIT"
 authors = [
-    {name = "YangNobody12", email = "yangnobody12@example.com"}
+    {name = "YangNobody12", email = "pkorn8394@gmail.com"}
 ]
 maintainers = [
-    {name = "YangNobody12", email = "yangnobody12@example.com"}
+    {name = "YangNobody12", email = "pkorn8394@gmail.com"}
 ]
 keywords = ["hmong", "language", "nlp", "linguistics", "text-processing"]
 classifiers = [

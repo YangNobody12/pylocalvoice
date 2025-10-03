@@ -90,9 +90,9 @@ setup(
     
     # Author information
     author='YangNobody12',
-    author_email='yangnobody12@example.com',
+    author_email='pkorn8394@gmail.com',
     maintainer='YangNobody12',
-    maintainer_email='yangnobody12@example.com',
+    maintainer_email='pkorn8394@gmail.com',
     
     # Project URLs
     url='https://github.com/yangnobody12/pyhmong',

@@ -190,6 +190,6 @@ pip install -e .  # if installing from source
 - 📖 Check the [full documentation](README.md)
 - 💬 Ask in [GitHub Discussions](https://github.com/yangnobody12/pyhmong/discussions)
 - 🐛 Report bugs in [Issues](https://github.com/yangnobody12/pyhmong/issues)
-- 📧 Email: yangnobody12@example.com
+- 📧 Email: pkorn8394@gmail.com
 
 Happy coding with pyhmong! 🎉

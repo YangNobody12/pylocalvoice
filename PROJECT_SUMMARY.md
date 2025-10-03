@@ -231,7 +231,7 @@ print(drill)  # ['pab', 'paj', 'pav', ...]
 - **Main Repo**: https://github.com/yangnobody12/pyhmong
 - **Issues**: https://github.com/yangnobody12/pyhmong/issues
 - **Author**: YangNobody12
-- **Email**: yangnobody12@example.com
+- **Email**: pkorn8394@gmail.com
 
 ## 📋 Command Reference
 

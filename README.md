@@ -218,7 +218,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Author**: YangNobody12
 - **Issues**: [GitHub Issues](https://github.com/yangnobody12/pyhmong/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/yangnobody12/pyhmong/discussions)
-- **Email**: yangnobody12@example.com
+- **Email**: pkorn8394@gmail.com
 
 ## ⭐ Show Your Support
 
@@ -436,7 +436,7 @@ If you use this library in your research, please cite:
 
 - **Issues**: [GitHub Issues](https://github.com/yangnobody12/pyhmong/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/yangnobody12/pyhmong/discussions)
-- **Email**: yangnobody12@example.com
+- **Email**: pkorn8394@gmail.com
 
 ## Changelog
 
