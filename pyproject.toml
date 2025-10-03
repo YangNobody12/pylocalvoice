@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+requires = ["setuptools>=65.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "A professional Python library for Hmong language processing"
 readme = "README.md"
 requires-python = ">=3.7"
-license = {text = "MIT"}
+license = "MIT"
 authors = [
     {name = "YangNobody12", email = "yangnobody12@example.com"}
 ]
@@ -21,7 +21,6 @@ classifiers = [
     "Intended Audience :: Developers",
     "Intended Audience :: Education",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
@@ -31,6 +30,7 @@ classifiers = [
     "Topic :: Text Processing :: Linguistic",
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Natural Language :: Hmong",
+    "Operating System :: OS Independent",
 ]
 
 [project.urls]
@@ -75,7 +75,6 @@ target-version = ['py37', 'py38', 'py39', 'py310', 'py311']
 include = '\.pyi?$'
 extend-exclude = '''
 /(
-  # directories
   \.eggs
   | \.git
   | \.hg
@@ -156,9 +155,9 @@ exclude_lines = [
 
 [tool.pylint.messages_control]
 disable = [
-    "C0111",  # missing-docstring
-    "C0103",  # invalid-name
-    "R0903",  # too-few-public-methods
+    "C0111",
+    "C0103",
+    "R0903",
 ]
 
 [tool.pylint.format]
