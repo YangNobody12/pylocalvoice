@@ -1,0 +1,38 @@
+# MANIFEST.in
+# Include additional files in source distribution
+
+# Documentation
+include README.md
+include LICENSE
+include CHANGELOG.md
+include CONTRIBUTING.md
+include QUICKSTART.md
+
+# Configuration files
+include pyproject.toml
+include setup.py
+include pytest.ini
+include Makefile
+include requirements.txt
+include requirements-dev.txt
+
+# Examples
+include examples.py
+
+# Git files
+include .gitignore
+
+# GitHub Actions
+recursive-include .github *.yml
+
+# Tests
+recursive-include tests *.py
+
+# Data files
+recursive-include pyhmong/data *.txt *.json
+
+# Exclude compiled files
+global-exclude *.py[cod]
+global-exclude __pycache__
+global-exclude *.so
+global-exclude .DS_Store
