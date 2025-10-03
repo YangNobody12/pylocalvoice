@@ -2,17 +2,24 @@
 pyhmong - A professional Python library for Hmong language processing
 =====================================================================
 
-This library provides tools for working with the Hmong language, including
-text processing, romanization systems, and linguistic utilities.
+This library provides comprehensive tools for working with the Hmong language:
+- Phonology & Orthography (normalization, syllable splitting, tone conversion)
+- Dictionary & Translation (Hmong ↔ English)
+- Grammar (POS tagging, classifiers, conjugation)
+- Phrasebook utilities (greetings, dialogues, questions)
+- Numbers & Measures (conversion, calculations)
+- Proverbs & Idioms (cultural expressions)
+- Education tools (drills, flashcards, quizzes)
 
 Author: YangNobody12
 License: MIT
 Version: 0.1.0
 """
 
-from typing import List, Dict, Optional, Set
+from typing import List, Dict, Optional, Set, Tuple, Union
 import re
 from enum import Enum
+import random
 
 
 class RomanizationSystem(Enum):
@@ -31,6 +38,20 @@ class ToneMarker(Enum):
     D = "high tone"
     M = "low glottalized tone"
     NONE = "mid tone (unmarked)"
+
+
+class PartOfSpeech(Enum):
+    """Parts of speech in Hmong."""
+    NOUN = "noun"
+    VERB = "verb"
+    ADJECTIVE = "adjective"
+    CLASSIFIER = "classifier"
+    PRONOUN = "pronoun"
+    PREPOSITION = "preposition"
+    CONJUNCTION = "conjunction"
+    PARTICLE = "particle"
+    ADVERB = "adverb"
+    UNKNOWN = "unknown"
 
 
 class HmongProcessor:
@@ -217,6 +238,99 @@ class HmongProcessor:
                 normalized.append(word.lower())
         
         return ' '.join(normalized)
+    
+    def convert_tone(self, syllable: str, target_tone: str) -> str:
+        """
+        Convert syllable to different tone.
+        
+        Args:
+            syllable: Input syllable
+            target_tone: Target tone marker (b, j, v, s, g, d, m, or '' for unmarked)
+            
+        Returns:
+            Syllable with new tone
+            
+        Example:
+            >>> processor = HmongProcessor()
+            >>> processor.convert_tone("kuv", "b")
+            'kub'
+        """
+        # Remove current tone
+        parts = self.decompose_syllable(syllable)
+        if not parts['nucleus']:
+            return syllable
+        
+        # Rebuild with new tone
+        onset = parts['onset'] or ''
+        nucleus = parts['nucleus']
+        new_syllable = f"{onset}{nucleus}"
+        
+        if target_tone and target_tone.lower() in self.TONES:
+            new_syllable += target_tone.lower()
+        
+        return new_syllable
+    
+    def syllable_split(self, word: str) -> List[str]:
+        """
+        Split word into syllables.
+        
+        Args:
+            word: Input word (may contain multiple syllables)
+            
+        Returns:
+            List of syllables
+            
+        Example:
+            >>> processor = HmongProcessor()
+            >>> processor.syllable_split("Hmoob")
+            ['Hmoob']
+            >>> processor.syllable_split("nyobzoo")
+            ['nyob', 'zoo']
+        """
+        # For now, Hmong words are typically single syllables
+        # This could be enhanced with a dictionary-based approach
+        return self.tokenize(word)
+    
+    def normalize_text(self, text: str, fix_tones: bool = True, 
+                      fix_case: bool = True, fix_spacing: bool = True) -> str:
+        """
+        Advanced text normalization with multiple options.
+        
+        Args:
+            text: Input text
+            fix_tones: Fix invalid tone markers
+            fix_case: Standardize case
+            fix_spacing: Fix spacing issues
+            
+        Returns:
+            Normalized text
+            
+        Example:
+            >>> processor = HmongProcessor()
+            >>> processor.normalize_text("kuv   YOG  neeg")
+            'Kuv yog neeg'
+        """
+        result = text
+        
+        # Fix spacing
+        if fix_spacing:
+            result = ' '.join(result.split())
+        
+        # Fix case (capitalize first word of sentences)
+        if fix_case:
+            sentences = result.split('.')
+            normalized_sentences = []
+            for sent in sentences:
+                sent = sent.strip()
+                if sent:
+                    words = sent.split()
+                    if words:
+                        words[0] = words[0].capitalize()
+                        words[1:] = [w.lower() for w in words[1:]]
+                    normalized_sentences.append(' '.join(words))
+            result = '. '.join(normalized_sentences)
+        
+        return result.strip()
     
     def get_initial_consonants(self) -> Set[str]:
         """

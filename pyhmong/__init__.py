@@ -65,4 +65,4 @@ if __name__ == '__main__':
     print(f"pyhmong version {__version__}")
     print(f"Author: {__author__}")
     print(f"License: {__license__}")
-    print("\nFor usage examples, see: https://github.com/yangnobody12/pyhmong")
+    print("\nFor usage examples, see: https://github.com/yourusername/pyhmong")
