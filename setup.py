@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 """
-Setup script for PyHmong
-=========================
+Setup script for PyLocalVoice
+==============================
 
 Installation:
     pip install .
@@ -56,10 +56,12 @@ VERSION = get_version()
 LONG_DESCRIPTION = read_file('README.md')
 if not LONG_DESCRIPTION:
     LONG_DESCRIPTION = """
-PyHmong - A Professional Python Library for Hmong Language Processing
-=====================================================================
+PyLocalVoice - A Professional Python Library for Local Voice Processing
+========================================================================
 
-A comprehensive Python library offering 7 major feature categories:
+A comprehensive Python library for local voice and language processing.
+
+Includes PyHmong - Hmong Language Processing Library:
 
 1. Phonology & Orthography - Text normalization, tone analysis
 2. Dictionary & Translation - Hmong ↔ English translation
@@ -76,15 +78,15 @@ Features:
 - Full RPA romanization support
 - Professional code structure
 
-Visit: https://github.com/yangnobody12/pyhmong
+Visit: https://github.com/yangnobody12/pylocalvoice
 """
 
 # Setup configuration
 setup(
     # Basic information
-    name='pyhmong',
+    name='pylocalvoice',
     version=VERSION,
-    description='A professional Python library for Hmong language processing',
+    description='A professional Python library for local voice and Hmong language processing',
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
     
@@ -95,21 +97,21 @@ setup(
     maintainer_email='pkorn8394@gmail.com',
     
     # Project URLs
-    url='https://github.com/yangnobody12/pyhmong',
+    url='https://github.com/yangnobody12/pylocalvoice',
     project_urls={
-        'Bug Reports': 'https://github.com/yangnobody12/pyhmong/issues',
-        'Source': 'https://github.com/yangnobody12/pyhmong',
-        'Documentation': 'https://github.com/yangnobody12/pyhmong#readme',
-        'Changelog': 'https://github.com/yangnobody12/pyhmong/blob/main/CHANGELOG.md',
+        'Bug Reports': 'https://github.com/yangnobody12/pylocalvoice/issues',
+        'Source': 'https://github.com/yangnobody12/pylocalvoice',
+        'Documentation': 'https://github.com/yangnobody12/pylocalvoice#readme',
+        'Changelog': 'https://github.com/yangnobody12/pylocalvoice/blob/main/CHANGELOG.md',
     },
     
     # License
     license='MIT',
     
     # Package configuration
-    packages=find_packages(exclude=['tests', 'tests.*', 'docs', 'examples']),
+    packages=find_packages(exclude=['tests', 'tests.*', 'docs', 'examples', 'homepage', 'homepage.*']),
     package_data={
-        'pyhmong': [
+        'pylocalvoice.pyhmong': [
             'data/*.txt',
             'data/*.json',
             'data/*.csv',
@@ -241,13 +243,13 @@ setup(
 # Post-installation message (without emoji for Windows compatibility)
 if __name__ == '__main__':
     print("\n" + "=" * 70)
-    print("PyHmong Installation Complete!")
+    print("PyLocalVoice Installation Complete!")
     print("=" * 70)
     print("\nQuick Start:")
-    print("  >>> import pyhmong")
+    print("  >>> from pylocalvoice import pyhmong")
     print("  >>> pyhmong.normalize_text('kuv yog neeg')")
     print("  >>> pyhmong.translate_hm_to_en('niam')")
-    print("\nDocumentation: https://github.com/yangnobody12/pyhmong")
-    print("Issues: https://github.com/yangnobody12/pyhmong/issues")
-    print("\nThank you for using PyHmong! Ua tsaug!")
+    print("\nDocumentation: https://github.com/yangnobody12/pylocalvoice")
+    print("Issues: https://github.com/yangnobody12/pylocalvoice/issues")
+    print("\nThank you for using PyLocalVoice! Ua tsaug!")
     print("=" * 70 + "\n")

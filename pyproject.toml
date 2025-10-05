@@ -3,9 +3,9 @@ requires = ["setuptools>=65.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pyhmong"
+name = "pylocalvoice"
 version = "0.1.0"
-description = "A professional Python library for Hmong language processing"
+description = "A professional Python library for local voice and Hmong language processing"
 readme = "README.md"
 requires-python = ">=3.7"
 license = "MIT"
@@ -34,11 +34,11 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yangnobody12/pyhmong"
-Documentation = "https://pyhmong.readthedocs.io"
-Repository = "https://github.com/yangnobody12/pyhmong"
-Issues = "https://github.com/yangnobody12/pyhmong/issues"
-Changelog = "https://github.com/yangnobody12/pyhmong/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/yangnobody12/pylocalvoice"
+Documentation = "https://pylocalvoice.readthedocs.io"
+Repository = "https://github.com/yangnobody12/pylocalvoice"
+Issues = "https://github.com/yangnobody12/pylocalvoice/issues"
+Changelog = "https://github.com/yangnobody12/pylocalvoice/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
 dev = [
@@ -63,11 +63,11 @@ test = [
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["pyhmong*"]
-exclude = ["tests*", "docs*"]
+include = ["pylocalvoice*"]
+exclude = ["tests*", "docs*", "homepage*"]
 
 [tool.setuptools.package-data]
-pyhmong = ["data/*.txt", "data/*.json"]
+"pylocalvoice.pyhmong" = ["data/*.txt", "data/*.json"]
 
 [tool.black]
 line-length = 100
@@ -133,7 +133,7 @@ markers = [
 ]
 
 [tool.coverage.run]
-source = ["pyhmong"]
+source = ["pylocalvoice"]
 omit = [
     "*/tests/*",
     "*/test_*.py",

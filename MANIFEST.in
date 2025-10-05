@@ -29,7 +29,7 @@ recursive-include .github *.yml
 recursive-include tests *.py
 
 # Data files
-recursive-include pyhmong/data *.txt *.json
+recursive-include pylocalvoice/pyhmong/data *.txt *.json
 
 # Exclude compiled files
 global-exclude *.py[cod]
