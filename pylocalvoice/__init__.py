@@ -12,7 +12,7 @@ Version: 0.1.0
 License: MIT
 """
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 __author__ = 'YangNobody12'
 __email__ = 'pkorn8394@gmail.com'
 __license__ = 'MIT'

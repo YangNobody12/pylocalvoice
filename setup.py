@@ -36,7 +36,7 @@ def get_version():
                 if line.startswith('__version__'):
                     # Extract version string
                     return line.split("'")[1]
-    return '0.1.0'
+    return '0.1.1'
 
 # Read long description from README
 def read_file(filename):
