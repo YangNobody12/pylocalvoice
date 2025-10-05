@@ -195,11 +195,10 @@ setup(
         'Topic :: Text Processing :: Linguistic',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Education',
-        
+
         # Natural language
-        'Natural Language :: Hmong',
         'Natural Language :: English',
-        
+
         # Operating systems
         'Operating System :: OS Independent',
         

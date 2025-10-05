@@ -21,7 +21,7 @@ pip install -e .
 ### 1. Import the library
 
 ```python
-from pylocalvoice from pylocalvoice import pyhmong
+from pylocalvoice import pyhmong
 ```
 
 ### 2. Normalize Hmong text
@@ -53,7 +53,7 @@ print(greeting)
 ### Using Translation
 
 ```python
-from pylocalvoice from pylocalvoice import pyhmong
+from pylocalvoice import pyhmong
 
 # Hmong to English
 print(pyhmong.translate_hm_to_en("kuv"))    # "I, me"
@@ -67,7 +67,7 @@ print(pyhmong.translate_en_to_hm("father")) # "txiv"
 ### Using Grammar
 
 ```python
-from pylocalvoice from pylocalvoice import pyhmong
+from pylocalvoice import pyhmong
 
 # Detect part of speech
 print(pyhmong.detect_pos("kuv"))    # "pronoun"
@@ -87,7 +87,7 @@ print(pyhmong.conjugate(sentence, "future")) # "yuav Kuv mus tsev"
 ### Example 1: Language Learning
 
 ```python
-from pylocalvoice from pylocalvoice import pyhmong
+from pylocalvoice import pyhmong
 
 # Get greetings
 print(pyhmong.get_greeting("morning"))   # "Nyob zoo sawv ntxov"
@@ -101,7 +101,7 @@ print(pyhmong.ask_question("age"))       # "Koj muaj pes tsawg xyoos?"
 ### Example 2: Translation
 
 ```python
-from pylocalvoice from pylocalvoice import pyhmong
+from pylocalvoice import pyhmong
 
 # Build vocabulary
 family_words = ["niam", "txiv", "tub", "ntxhais"]
@@ -113,7 +113,7 @@ for word in family_words:
 ### Example 3: Numbers
 
 ```python
-from pylocalvoice from pylocalvoice import pyhmong
+from pylocalvoice import pyhmong
 
 # Convert numbers to Hmong
 for i in range(1, 11):

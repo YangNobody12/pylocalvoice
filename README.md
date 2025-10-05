@@ -1,3 +1,109 @@
+# PyLocalVoice 🇱🇦
+
+[![PyPI version](https://badge.fury.io/py/pylocalvoice.svg)](https://badge.fury.io/py/pylocalvoice)
+[![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A professional Python library for local voice and Hmong language processing. This library provides comprehensive tools for working with the Hmong language, including text processing, translation, grammar analysis, and educational utilities.
+
+## ✨ Features
+
+### 🔤 1. Phonology & Orthography
+- **normalize_text()**: Standardize Hmong text (fix tones, case, spacing)
+- **syllable_split()**: Split words into syllables (CV + tone structure)
+- **get_tone()**: Detect tone markers (-b, -j, -v, -s, -g, -d, -m)
+- **convert_tone()**: Convert syllables between different tones
+
+### 📚 2. Dictionary & Translation
+- **translate_hm_to_en()**: Translate Hmong → English (Heimbach Dict based)
+- **translate_en_to_hm()**: Translate English → Hmong
+- **search_dictionary()**: Search with examples and fuzzy matching
+
+### 📖 3. Grammar
+- **detect_pos()**: Detect part of speech (noun, verb, classifier, etc.)
+- **get_classifiers()**: Get appropriate classifiers for nouns
+- **conjugate()**: Add tense markers (past, present, future)
+- **substitute()**: Grammar drill exercises
+
+### 💬 4. Phrasebook Utilities
+- **get_greeting()**: Get greetings (morning, afternoon, evening)
+- **ask_question()**: Common questions (name, age, location, etc.)
+- **basic_dialogue()**: Pre-built dialogues by topic (food, family, etc.)
+
+### 🔢 5. Numbers & Measures
+- **num_to_hmong()**: Convert numbers to Hmong words (1 = ib, 2 = ob)
+- **hmong_to_num()**: Convert Hmong words to numbers
+- **convert_measure()**: Unit conversions (lbs ↔ kg, miles ↔ km)
+
+### 💭 6. Proverbs & Idioms
+- **get_proverb()**: Get Hmong proverbs by topic
+- **explain_idiom()**: Explain cultural expressions and meanings
+
+### 🎓 7. Education Tools
+- **generate_drill()**: Create pronunciation drills (tone, consonant, vowel)
+- **quiz_flashcards()**: Flashcard sets by category (food, family, colors)
+- **check_pronunciation()**: Analyze syllable structure and pronunciation
+
+## 📦 Installation
+
+### From PyPI (Recommended)
+
+```bash
+pip install pylocalvoice
+```
+
+### From Source
+
+```bash
+git clone https://github.com/yangnobody12/pylocalvoice.git
+cd pylocalvoice
+pip install -e .
+```
+
+### For Development
+
+```bash
+git clone https://github.com/yangnobody12/pylocalvoice.git
+cd pylocalvoice
+pip install -e ".[dev]"
+```
+
+## 🚀 Quick Start
+
+```python
+from pylocalvoice import pyhmong
+
+# 1. Phonology - Normalize and analyze text
+text = "kuv  YOG  neeg"
+clean = pyhmong.normalize_text(text)  # "Kuv yog neeg"
+tone = pyhmong.get_tone("kuv")  # "V"
+converted = pyhmong.convert_tone("kuv", "b")  # "kub"
+
+# 2. Translation - Hmong ↔ English
+pyhmong.translate_hm_to_en("niam")  # "mother"
+pyhmong.translate_en_to_hm("father")  # "txiv"
+
+# 3. Grammar - Analyze and conjugate
+pyhmong.detect_pos("yog")  # "verb"
+pyhmong.get_classifiers("neeg")  # ["tus"]
+pyhmong.conjugate("Kuv mus tsev", "past")  # "Kuv mus tsev lawm"
+
+# 4. Phrasebook - Common phrases
+pyhmong.get_greeting("morning")  # "Nyob zoo sawv ntxov"
+pyhmong.ask_question("name")  # "Koj lub npe hu li cas?"
+
+# 5. Numbers - Convert numbers
+pyhmong.num_to_hmong(5)  # "tsib"
+pyhmong.hmong_to_num("kaum")  # 10
+
+# 6. Proverbs - Cultural expressions
+pyhmong.get_proverb("wisdom")  # Returns Hmong proverb
+
+# 7. Education - Learning tools
+pyhmong.generate_drill("tone")  # ['pab', 'paj', 'pav', ...]
+pyhmong.quiz_flashcards("food")  # {'mov': 'rice', ...}
+```
+
 ## 📚 Documentation
 
 - **[Features Guide](FEATURES.md)** - Complete guide to all 7 feature categories
@@ -10,6 +116,8 @@
 
 ### Language Learning
 ```python
+from pylocalvoice import pyhmong
+
 # Learn basic greetings
 print(pyhmong.get_greeting("morning"))  # "Nyob zoo sawv ntxov"
 
@@ -24,6 +132,8 @@ cards = pyhmong.quiz_flashcards("food")
 
 ### Text Processing
 ```python
+from pylocalvoice import pyhmong
+
 # Clean up messy Hmong text
 messy = "kuv   YOG  neeg   HMOOB"
 clean = pyhmong.normalize_text(messy)  # "Kuv yog neeg hmoob"
@@ -35,6 +145,8 @@ print(analysis)  # Shows onset, nucleus, tone
 
 ### Translation & Dictionary
 ```python
+from pylocalvoice import pyhmong
+
 # Build a vocabulary list
 words = ["niam", "txiv", "tub", "ntxhais"]
 for word in words:
@@ -47,6 +159,8 @@ results = pyhmong.search_dictionary("family", lang="en")
 
 ### Grammar Practice
 ```python
+from pylocalvoice import pyhmong
+
 # Practice tenses
 sentence = "Kuv mus tsev"
 print(pyhmong.conjugate(sentence, "past"))    # Add past marker
@@ -62,7 +176,7 @@ print(pyhmong.get_classifiers("tsev"))  # ["lub"]
 ### Quick Reference
 
 ```python
-import pyhmong
+from pylocalvoice import pyhmong
 
 # === PHONOLOGY ===
 pyhmong.normalize_text(text)          # Clean text
@@ -103,28 +217,11 @@ pyhmong.check_pronunciation(word)     # Check structure
 
 ## 🔧 Advanced Usage
 
-### Using Classes Directly
-
-```python
-from pyhmong import HmongProcessor, HmongTranslator, HmongGrammar
-
-# Advanced text processing
-processor = HmongProcessor()
-parts = processor.decompose_syllable("ntxawg")
-print(parts)  # {'onset': 'ntx', 'nucleus': 'aw', 'coda': 'g'}
-
-# Advanced translation
-translator = HmongTranslator()
-results = translator.search_dictionary("niam", lang="hm")
-
-# Advanced grammar
-grammar = HmongGrammar()
-pos = grammar.detect_pos("yog")
-```
-
 ### Batch Processing
 
 ```python
+from pylocalvoice import pyhmong
+
 # Process multiple texts
 texts = [
     "Kuv yog neeg Hmoob",
@@ -134,14 +231,14 @@ texts = [
 
 for text in texts:
     clean = pyhmong.normalize_text(text)
-    tokens = pyhmong.tokenize(clean)
-    
+
     print(f"Text: {text}")
-    print(f"Tokens: {tokens}")
-    
-    for token in tokens:
-        translation = pyhmong.translate_hm_to_en(token)
-        print(f"  {token} = {translation}")
+    print(f"Clean: {clean}")
+
+    # Translate each word
+    for word in clean.split():
+        translation = pyhmong.translate_hm_to_en(word)
+        print(f"  {word} = {translation}")
     print()
 ```
 
@@ -216,9 +313,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📧 Contact & Support
 
 - **Author**: YangNobody12
-- **Issues**: [GitHub Issues](https://github.com/yangnobody12/pyhmong/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yangnobody12/pyhmong/discussions)
 - **Email**: pkorn8394@gmail.com
+- **PyPI**: https://pypi.org/project/pylocalvoice/
+- **Issues**: [GitHub Issues](https://github.com/yangnobody12/pylocalvoice/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/yangnobody12/pylocalvoice/discussions)
 
 ## ⭐ Show Your Support
 
@@ -233,11 +331,11 @@ If you find this library helpful, please consider:
 If you use this library in your research or project, please cite:
 
 ```bibtex
-@software{pyhmong,
+@software{pylocalvoice,
   author = {YangNobody12},
-  title = {pyhmong: A Comprehensive Python Library for Hmong Language Processing},
+  title = {PyLocalVoice: A Comprehensive Python Library for Hmong Language Processing},
   year = {2025},
-  url = {https://github.com/yangnobody12/pyhmong},
+  url = {https://github.com/yangnobody12/pylocalvoice},
   version = {0.1.0}
 }
 ```
@@ -246,385 +344,4 @@ If you use this library in your research or project, please cite:
 
 **Made with ❤️ for the Hmong community**
 
-*Ua tsaug! (Thank you!)*# pyhmong 🇱🇦
-
-[![PyPI version](https://badge.fury.io/py/pyhmong.svg)](https://badge.fury.io/py/pyhmong)
-[![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://github.com/yourusername/pyhmong/workflows/tests/badge.svg)](https://github.com/yourusername/pyhmong/actions)
-
-A professional Python library for Hmong language processing. This library provides tools for working with the Hmong language, including text processing, romanization systems, and linguistic utilities.
-
-## Features
-
-### 🔤 1. Phonology & Orthography
-- **normalize_text()**: Standardize Hmong text (fix tones, case, spacing)
-- **syllable_split()**: Split words into syllables (CV + tone structure)
-- **get_tone()**: Detect tone markers (-b, -j, -v, -s, -g, -d, -m)
-- **convert_tone()**: Convert syllables between different tones
-
-### 📚 2. Dictionary & Translation
-- **translate_hm_to_en()**: Translate Hmong → English (Heimbach Dict based)
-- **translate_en_to_hm()**: Translate English → Hmong
-- **search_dictionary()**: Search with examples and fuzzy matching
-
-### 📖 3. Grammar
-- **detect_pos()**: Detect part of speech (noun, verb, classifier, etc.)
-- **get_classifiers()**: Get appropriate classifiers for nouns
-- **conjugate()**: Add tense markers (past, present, future)
-- **substitute()**: Grammar drill exercises
-
-### 💬 4. Phrasebook Utilities
-- **get_greeting()**: Get greetings (morning, afternoon, evening)
-- **ask_question()**: Common questions (name, age, location, etc.)
-- **basic_dialogue()**: Pre-built dialogues by topic (food, family, etc.)
-
-### 🔢 5. Numbers & Measures
-- **num_to_hmong()**: Convert numbers to Hmong words (1 = ib, 2 = ob)
-- **hmong_to_num()**: Convert Hmong words to numbers
-- **convert_measure()**: Unit conversions (lbs ↔ kg, miles ↔ km)
-
-### 💭 6. Proverbs & Idioms
-- **get_proverb()**: Get Hmong proverbs by topic
-- **explain_idiom()**: Explain cultural expressions and meanings
-
-### 🎓 7. Education Tools
-- **generate_drill()**: Create pronunciation drills (tone, consonant, vowel)
-- **quiz_flashcards()**: Flashcard sets by category (food, family, colors)
-- **check_pronunciation()**: Analyze syllable structure and pronunciation
-
-## Installation
-
-### Enums
-
-**RomanizationSystem:**
-- `RPA`: Romanized Popular Alphabet (default)
-- `PAHAWH`: Pahawh Hmong script
-
-**ToneMarker:**
-- `B`: mid-low tone
-- `J`: high falling tone
-- `V`: mid-high rising tone
-- `S`: low breathy tone
-- `G`: low falling tone
-- `D`: high tone
-- `M`: low glottalized tone
-- `NONE`: mid tone (unmarked)
-
-## Project Structure
-
-```
-pyhmong/
-├── pyhmong/
-│   ├── __init__.py          # Package initialization
-│   ├── core.py              # Main library code
-│   └── data/                # Data files (if any)
-├── tests/
-│   ├── __init__.py
-│   └── test_pyhmong.py      # Unit tests
-├── docs/                    # Documentation
-├── setup.py                 # Package setup
-├── README.md                # This file
-├── LICENSE                  # MIT License
-├── requirements.txt         # Dependencies
-├── requirements-dev.txt     # Development dependencies
-├── .gitignore              # Git ignore rules
-└── pytest.ini              # Pytest configuration
-```
-
-## Development
-
-### Running Tests
-
-```bash
-# Run all tests
-pytest
-
-# Run with coverage
-pytest --cov=pyhmong --cov-report=html
-
-# Run specific test file
-pytest tests/test_pyhmong.py
-
-# Run specific test
-pytest tests/test_pyhmong.py::TestHmongProcessor::test_tokenize_basic
-```
-
-### Code Quality
-
-```bash
-# Format code with Black
-black pyhmong tests
-
-# Lint with flake8
-flake8 pyhmong tests
-
-# Type checking with mypy
-mypy pyhmong
-```
-
-### Building Documentation
-
-```bash
-cd docs
-make html
-```
-
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes
-4. Run tests (`pytest`)
-5. Commit your changes (`git commit -m 'Add amazing feature'`)
-6. Push to the branch (`git push origin feature/amazing-feature`)
-7. Open a Pull Request
-
-### Code Style Guidelines
-
-- Follow PEP 8 style guide
-- Use Black for code formatting
-- Write docstrings for all public methods
-- Add unit tests for new features
-- Update documentation as needed
-
-## Roadmap
-
-- [ ] Support for Pahawh Hmong script
-- [ ] Advanced dictionary with more words
-- [ ] Text-to-speech integration
-- [ ] Language detection
-- [ ] Dialect support (White Hmong, Green Hmong)
-- [ ] Machine translation support
-- [ ] Named entity recognition
-- [ ] Part-of-speech tagging
-
-## Resources
-
-### Learn More About Hmong Language
-
-- [Hmong Language Wikipedia](https://en.wikipedia.org/wiki/Hmong_language)
-- [RPA Romanization System](https://en.wikipedia.org/wiki/Romanized_Popular_Alphabet)
-- [Hmong Dictionary Online](https://hmongdictionary.com)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Thanks to the Hmong community for preserving this beautiful language
-- Inspired by various NLP libraries and linguistic research
-- Built with modern Python best practices
-
-## Citation
-
-If you use this library in your research, please cite:
-
-```bibtex
-@software{pyhmong,
-  author = {YangNobody12},
-  title = {pyhmong: A Python Library for Hmong Language Processing},
-  year = {2025},
-  url = {https://github.com/yangnobody12/pyhmong}
-}
-```
-
-## Support
-
-- **Issues**: [GitHub Issues](https://github.com/yangnobody12/pyhmong/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yangnobody12/pyhmong/discussions)
-- **Email**: pkorn8394@gmail.com
-
-## Changelog
-
-### Version 0.1.0 (2025-10-03)
-
-- Initial release
-- Basic text processing functions
-- Syllable validation and decomposition
-- Tone marker support
-- Simple dictionary implementation
-- RPA romanization support
-
----
-
-Made with ❤️ for the Hmong community From PyPI (when published)
-
-```bash
-pip install pyhmong
-```
-
-### From Source
-
-```bash
-git clone https://github.com/yangnobody12/pyhmong.git
-cd pyhmong
-pip install -e .
-```
-
-### For Development
-
-```bash
-git clone https://github.com/yangnobody12/pyhmong.git
-cd pyhmong
-pip install -e ".[dev]"
-```
-
-## Quick Start
-
-```python
-import pyhmong
-
-# 1. Phonology - Normalize and analyze text
-text = "kuv  YOG  neeg"
-clean = pyhmong.normalize_text(text)  # "Kuv yog neeg"
-tone = pyhmong.get_tone("kuv")  # "V"
-converted = pyhmong.convert_tone("kuv", "b")  # "kub"
-
-# 2. Translation - Hmong ↔ English
-pyhmong.translate_hm_to_en("niam")  # "mother"
-pyhmong.translate_en_to_hm("father")  # "txiv"
-
-# 3. Grammar - Analyze and conjugate
-pyhmong.detect_pos("yog")  # "verb"
-pyhmong.get_classifiers("neeg")  # ["tus"]
-pyhmong.conjugate("Kuv mus tsev", "past")  # "Kuv mus tsev lawm"
-
-# 4. Phrasebook - Common phrases
-pyhmong.get_greeting("morning")  # "Nyob zoo sawv ntxov"
-pyhmong.ask_question("name")  # "Koj lub npe hu li cas?"
-
-# 5. Numbers - Convert numbers
-pyhmong.num_to_hmong(5)  # "tsib"
-pyhmong.hmong_to_num("kaum")  # 10
-
-# 6. Proverbs - Cultural expressions
-pyhmong.get_proverb("wisdom")  # Returns Hmong proverb
-
-# 7. Education - Learning tools
-pyhmong.generate_drill("tone")  # ['pab', 'paj', 'pav', ...]
-pyhmong.quiz_flashcards("food")  # {'mov': 'rice', ...}
-```
-
-## Usage Examples
-
-### Basic Text Processing
-
-```python
-from pyhmong import HmongProcessor
-
-processor = HmongProcessor()
-
-# Tokenize text
-text = "Nyob zoo, koj nyob li cas?"
-tokens = processor.tokenize(text)
-print(tokens)
-
-# Count syllables
-count = processor.count_syllables(text)
-print(f"Number of syllables: {count}")
-
-# Validate syllables
-syllables = ["kuv", "koj", "xyz", "peb"]
-for syllable in syllables:
-    valid = processor.is_valid_syllable(syllable)
-    print(f"{syllable}: {valid}")
-```
-
-### Tone Analysis
-
-```python
-from pyhmong import HmongProcessor
-
-processor = HmongProcessor()
-
-# Get tone of a syllable
-tone = processor.get_tone("kuv")
-print(f"Tone: {tone}")  # ToneMarker.V: 'mid-high rising tone'
-
-# Decompose syllables
-syllable = "ntxawg"
-parts = processor.decompose_syllable(syllable)
-print(parts)  # {'onset': 'ntx', 'nucleus': 'aw', 'coda': 'g'}
-```
-
-### Dictionary Lookup
-
-```python
-from pyhmong import HmongDictionary
-
-dictionary = HmongDictionary()
-
-# Look up words
-print(dictionary.lookup("kuv"))  # "I, me"
-print(dictionary.lookup("koj"))  # "you"
-
-# Add custom words
-dictionary.add_word("tsev", "house")
-print(dictionary.lookup("tsev"))  # "house"
-
-# Get all words
-all_words = dictionary.get_all_words()
-print(f"Dictionary has {len(all_words)} words")
-```
-
-### Advanced Usage
-
-```python
-from pyhmong import HmongProcessor, RomanizationSystem
-
-# Initialize with specific romanization system
-processor = HmongProcessor(system=RomanizationSystem.RPA)
-
-# Get linguistic components
-consonants = processor.get_initial_consonants()
-vowels = processor.get_vowels()
-
-print(f"Number of consonants: {len(consonants)}")
-print(f"Number of vowels: {len(vowels)}")
-
-# Process multiple texts
-texts = [
-    "Kuv yog neeg Hmoob",
-    "Koj nyob qhov twg?",
-    "Peb mus tsev"
-]
-
-for text in texts:
-    tokens = processor.tokenize(text)
-    normalized = processor.normalize(text)
-    print(f"Original: {text}")
-    print(f"Tokens: {tokens}")
-    print(f"Normalized: {normalized}")
-    print()
-```
-
-## API Reference
-
-### HmongProcessor
-
-Main class for processing Hmong text.
-
-**Methods:**
-- `tokenize(text: str) -> List[str]`: Tokenize text into syllables
-- `is_valid_syllable(syllable: str) -> bool`: Check if syllable is valid
-- `get_tone(syllable: str) -> Optional[ToneMarker]`: Extract tone from syllable
-- `decompose_syllable(syllable: str) -> Dict`: Break down syllable structure
-- `count_syllables(text: str) -> int`: Count syllables in text
-- `normalize(text: str) -> str`: Normalize text formatting
-- `get_initial_consonants() -> Set[str]`: Get all valid consonants
-- `get_vowels() -> Set[str]`: Get all valid vowels
-
-### HmongDictionary
-
-Dictionary class for Hmong words.
-
-**Methods:**
-- `lookup(word: str) -> Optional[str]`: Look up word definition
-- `add_word(word: str, definition: str)`: Add new word to dictionary
-- `get_all_words() -> List[str]`: Get all words in dictionary
-
-###
+*Ua tsaug! (Thank you!)*
