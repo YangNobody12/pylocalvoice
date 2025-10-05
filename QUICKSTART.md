@@ -1,18 +1,18 @@
-# pyhmong Quick Start Guide
+# PyLocalVoice Quick Start Guide
 
-Get started with pyhmong in 5 minutes! 🚀
+Get started with pylocalvoice in 5 minutes! 🚀
 
 ## Installation
 
 ```bash
-pip install pyhmong
+pip install pylocalvoice
 ```
 
 Or from source:
 
 ```bash
-git clone https://github.com/yourusername/pyhmong.git
-cd pyhmong
+git clone https://github.com/yangnobody12/pylocalvoice.git
+cd pylocalvoice
 pip install -e .
 ```
 
@@ -21,126 +21,104 @@ pip install -e .
 ### 1. Import the library
 
 ```python
-import pyhmong
+from pylocalvoice from pylocalvoice import pyhmong
 ```
 
-### 2. Tokenize Hmong text
+### 2. Normalize Hmong text
 
 ```python
-text = "Kuv yog neeg Hmoob"
-tokens = pyhmong.tokenize(text)
-print(tokens)
-# Output: ['Kuv', 'yog', 'neeg', 'Hmoob']
-```
-
-### 3. Validate Hmong syllables
-
-```python
-print(pyhmong.is_valid_syllable("kuv"))   # True
-print(pyhmong.is_valid_syllable("xyz"))   # False
-```
-
-### 4. Normalize text
-
-```python
-messy = "kuv   yog  NEEG   hmoob"
-clean = pyhmong.normalize(messy)
+text = "kuv   yog  NEEG   hmoob"
+clean = pyhmong.normalize_text(text)
 print(clean)
 # Output: "Kuv yog neeg hmoob"
 ```
 
-## Advanced Usage
-
-### Using HmongProcessor
+### 3. Translate words
 
 ```python
-from pyhmong import HmongProcessor
-
-processor = HmongProcessor()
-
-# Get tone information
-tone = processor.get_tone("kuv")
-print(tone)  # ToneMarker.V: 'mid-high rising tone'
-
-# Decompose syllable
-parts = processor.decompose_syllable("ntxawg")
-print(parts)
-# Output: {'onset': 'ntx', 'nucleus': 'aw', 'coda': 'g'}
-
-# Count syllables
-count = processor.count_syllables("Nyob zoo koj nyob li cas")
-print(count)  # 6
+print(pyhmong.translate_hm_to_en("niam"))   # "mother"
+print(pyhmong.translate_en_to_hm("father")) # "txiv"
 ```
 
-### Using Dictionary
+### 4. Get greetings
 
 ```python
-from pyhmong import HmongDictionary
+greeting = pyhmong.get_greeting("morning")
+print(greeting)
+# Output: "Nyob zoo sawv ntxov"
+```
 
-dictionary = HmongDictionary()
+## Advanced Usage
 
-# Look up words
-meaning = dictionary.lookup("kuv")
-print(meaning)  # "I, me"
+### Using Translation
 
-# Add custom words
-dictionary.add_word("tsev", "house")
-print(dictionary.lookup("tsev"))  # "house"
+```python
+from pylocalvoice from pylocalvoice import pyhmong
+
+# Hmong to English
+print(pyhmong.translate_hm_to_en("kuv"))    # "I, me"
+print(pyhmong.translate_hm_to_en("koj"))    # "you (singular)"
+
+# English to Hmong
+print(pyhmong.translate_en_to_hm("mother")) # "niam"
+print(pyhmong.translate_en_to_hm("father")) # "txiv"
+```
+
+### Using Grammar
+
+```python
+from pylocalvoice from pylocalvoice import pyhmong
+
+# Detect part of speech
+print(pyhmong.detect_pos("kuv"))    # "pronoun"
+print(pyhmong.detect_pos("yog"))    # "verb"
+
+# Get classifiers
+print(pyhmong.get_classifiers("neeg"))  # ["tus"]
+
+# Conjugate tenses
+sentence = "Kuv mus tsev"
+print(pyhmong.conjugate(sentence, "past"))   # "Kuv mus tsev lawm"
+print(pyhmong.conjugate(sentence, "future")) # "yuav Kuv mus tsev"
 ```
 
 ## Common Use Cases
 
-### Example 1: Text Analysis
+### Example 1: Language Learning
 
 ```python
-from pyhmong import HmongProcessor
+from pylocalvoice from pylocalvoice import pyhmong
 
-processor = HmongProcessor()
-text = "Nyob zoo, koj nyob li cas?"
+# Get greetings
+print(pyhmong.get_greeting("morning"))   # "Nyob zoo sawv ntxov"
+print(pyhmong.get_greeting("evening"))   # "Nyob zoo tsaus ntuj"
 
-# Analyze the text
-tokens = processor.tokenize(text)
-print(f"Tokens: {tokens}")
-
-for token in tokens:
-    if processor.is_valid_syllable(token):
-        tone = processor.get_tone(token)
-        print(f"{token}: {tone.name}")
+# Ask questions
+print(pyhmong.ask_question("name"))      # "Koj lub npe hu li cas?"
+print(pyhmong.ask_question("age"))       # "Koj muaj pes tsawg xyoos?"
 ```
 
-### Example 2: Data Cleaning
+### Example 2: Translation
 
 ```python
-import pyhmong
+from pylocalvoice from pylocalvoice import pyhmong
 
-# Clean messy Hmong text
-texts = [
-    "kuv   YOG  neeg",
-    "KOJ    nyob  QHOV  twg",
-    "peb   mus   TSEV"
-]
-
-for text in texts:
-    clean = pyhmong.normalize(text)
-    print(f"Before: '{text}'")
-    print(f"After:  '{clean}'")
-    print()
+# Build vocabulary
+family_words = ["niam", "txiv", "tub", "ntxhais"]
+for word in family_words:
+    english = pyhmong.translate_hm_to_en(word)
+    print(f"{word} = {english}")
 ```
 
-### Example 3: Syllable Validation
+### Example 3: Numbers
 
 ```python
-from pyhmong import HmongProcessor
+from pylocalvoice from pylocalvoice import pyhmong
 
-processor = HmongProcessor()
-
-# Validate a list of words
-words = ["kuv", "koj", "hello", "ntxawg", "xyz"]
-
-for word in words:
-    valid = processor.is_valid_syllable(word)
-    status = "✓" if valid else "✗"
-    print(f"{status} {word}")
+# Convert numbers to Hmong
+for i in range(1, 11):
+    hmong_num = pyhmong.num_to_hmong(i)
+    print(f"{i} = {hmong_num}")
 ```
 
 ## Next Steps
@@ -156,12 +134,12 @@ for word in words:
 
 **Problem:**
 ```python
-ImportError: No module named 'pyhmong'
+ImportError: No module named 'pylocalvoice'
 ```
 
 **Solution:**
 ```bash
-pip install pyhmong
+pip install pylocalvoice
 # or
 pip install -e .  # if installing from source
 ```
@@ -180,16 +158,16 @@ pip install -e .  # if installing from source
 
 ## Resources
 
-- **Documentation**: https://pyhmong.readthedocs.io
-- **GitHub**: https://github.com/yangnobody12/pyhmong
-- **Issues**: https://github.com/yangnobody12/pyhmong/issues
-- **PyPI**: https://pypi.org/project/pyhmong
+- **Documentation**: https://pylocalvoice.readthedocs.io
+- **GitHub**: https://github.com/yangnobody12/pylocalvoice
+- **Issues**: https://github.com/yangnobody12/pylocalvoice/issues
+- **PyPI**: https://pypi.org/project/pylocalvoice
 
 ## Need Help?
 
 - 📖 Check the [full documentation](README.md)
-- 💬 Ask in [GitHub Discussions](https://github.com/yangnobody12/pyhmong/discussions)
-- 🐛 Report bugs in [Issues](https://github.com/yangnobody12/pyhmong/issues)
+- 💬 Ask in [GitHub Discussions](https://github.com/yangnobody12/pylocalvoice/discussions)
+- 🐛 Report bugs in [Issues](https://github.com/yangnobody12/pylocalvoice/issues)
 - 📧 Email: pkorn8394@gmail.com
 
-Happy coding with pyhmong! 🎉
+Happy coding with pylocalvoice! 🎉

@@ -1,6 +1,6 @@
-# PyHmong Features Guide
+# PyLocalVoice Features Guide
 
-Complete guide to all 7 feature categories in pyhmong library.
+Complete guide to all 7 feature categories in pylocalvoice library (pyhmong module).
 
 ---
 
@@ -31,7 +31,7 @@ Standardize Hmong text formatting.
 
 **Example:**
 ```python
-import pyhmong
+from pylocalvoice import pyhmong
 
 text = "kuv   YOG  neeg   HMOOB"
 clean = pyhmong.normalize_text(text)
@@ -400,7 +400,7 @@ print(analysis)
 Here's a complete example using multiple features:
 
 ```python
-import pyhmong
+from pylocalvoice import pyhmong
 
 # 1. Normalize text
 text = "kuv  yog  NEEG  hmoob"
@@ -452,4 +452,4 @@ print(f"Practice: {drill}")
 
 ---
 
-For more information, visit: https://github.com/yangnobody12/pyhmong
+For more information, visit: https://github.com/yangnobody12/pylocalvoice

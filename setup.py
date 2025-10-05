@@ -25,8 +25,8 @@ from setuptools import setup, find_packages
 def get_version():
     """Extract version from package __init__.py"""
     init_path = os.path.join(
-        os.path.dirname(__file__), 
-        'pyhmong', 
+        os.path.dirname(__file__),
+        'pyhmong',
         '__init__.py'
     )
     

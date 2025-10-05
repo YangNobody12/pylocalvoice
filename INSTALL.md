@@ -1,6 +1,6 @@
-# Installation Guide for pyhmong
+# Installation Guide for PyLocalVoice
 
-This guide covers all the ways to install pyhmong on your system.
+This guide covers all the ways to install pylocalvoice on your system.
 
 ## Table of Contents
 
@@ -24,7 +24,7 @@ This guide covers all the ways to install pyhmong on your system.
 
 ### Python Packages
 
-pyhmong has **no external dependencies** for core functionality! It uses only Python's standard library.
+pylocalvoice has **no external dependencies** for core functionality! It uses only Python's standard library.
 
 ## Installation Methods
 
@@ -33,13 +33,13 @@ pyhmong has **no external dependencies** for core functionality! It uses only Py
 Once published, install using pip:
 
 ```bash
-pip install pyhmong
+pip install pylocalvoice
 ```
 
 To install a specific version:
 
 ```bash
-pip install pyhmong==0.1.0
+pip install pylocalvoice==0.1.0
 ```
 
 ### Method 2: Install from Source
@@ -47,35 +47,35 @@ pip install pyhmong==0.1.0
 #### Using pip
 
 ```bash
-git clone https://github.com/yangnobody12/pyhmong.git
-cd pyhmong
+git clone https://github.com/yangnobody12/pylocalvoice.git
+cd pylocalvoice
 pip install .
 ```
 
 #### For Development
 
 ```bash
-git clone https://github.com/yangnobody12/pyhmong.git
-cd pyhmong
+git clone https://github.com/yangnobody12/pylocalvoice.git
+cd pylocalvoice
 pip install -e ".[dev]"
 ```
 
 ### Method 3: Download and Install
 
-1. Download the latest release from [GitHub Releases](https://github.com/yangnobody12/pyhmong/releases)
+1. Download the latest release from [GitHub Releases](https://github.com/yangnobody12/pylocalvoice/releases)
 2. Extract the archive
 3. Navigate to the directory
 4. Install:
 
 ```bash
-cd pyhmong-0.1.0
+cd pylocalvoice-0.1.0
 pip install .
 ```
 
 ### Method 4: Using pipx (Isolated Environment)
 
 ```bash
-pipx install pyhmong
+pipx install pylocalvoice
 ```
 
 ## Platform-Specific Instructions
@@ -85,20 +85,20 @@ pipx install pyhmong
 #### Using Command Prompt
 
 ```cmd
-python -m pip install pyhmong
+python -m pip install pylocalvoice
 ```
 
 #### Using PowerShell
 
 ```powershell
-python -m pip install pyhmong
+python -m pip install pylocalvoice
 ```
 
 #### Using Anaconda
 
 ```bash
 conda activate your_environment
-pip install pyhmong
+pip install pylocalvoice
 ```
 
 ### macOS
@@ -106,13 +106,13 @@ pip install pyhmong
 #### Using Terminal
 
 ```bash
-pip3 install pyhmong
+pip3 install pylocalvoice
 ```
 
 #### Using Homebrew Python
 
 ```bash
-/usr/local/bin/pip3 install pyhmong
+/usr/local/bin/pip3 install pylocalvoice
 ```
 
 ### Linux
@@ -122,21 +122,21 @@ pip3 install pyhmong
 ```bash
 sudo apt update
 sudo apt install python3-pip
-pip3 install pyhmong
+pip3 install pylocalvoice
 ```
 
 #### Fedora/RHEL/CentOS
 
 ```bash
 sudo dnf install python3-pip
-pip3 install pyhmong
+pip3 install pylocalvoice
 ```
 
 #### Arch Linux
 
 ```bash
 sudo pacman -S python-pip
-pip install pyhmong
+pip install pylocalvoice
 ```
 
 ## Virtual Environments
@@ -145,16 +145,16 @@ pip install pyhmong
 
 ```bash
 # Create virtual environment
-python -m venv pyhmong_env
+python -m venv pylocalvoice_env
 
 # Activate on Windows
-pyhmong_env\Scripts\activate
+pylocalvoice_env\Scripts\activate
 
 # Activate on macOS/Linux
-source pyhmong_env/bin/activate
+source pylocalvoice_env/bin/activate
 
-# Install pyhmong
-pip install pyhmong
+# Install pylocalvoice
+pip install pylocalvoice
 ```
 
 ### Using virtualenv
@@ -164,24 +164,24 @@ pip install pyhmong
 pip install virtualenv
 
 # Create environment
-virtualenv pyhmong_env
+virtualenv pylocalvoice_env
 
 # Activate and install
-source pyhmong_env/bin/activate  # or pyhmong_env\Scripts\activate on Windows
-pip install pyhmong
+source pylocalvoice_env/bin/activate  # or pylocalvoice_env\Scripts\activate on Windows
+pip install pylocalvoice
 ```
 
 ### Using conda
 
 ```bash
 # Create conda environment
-conda create -n pyhmong_env python=3.9
+conda create -n pylocalvoice_env python=3.9
 
 # Activate environment
-conda activate pyhmong_env
+conda activate pylocalvoice_env
 
-# Install pyhmong
-pip install pyhmong
+# Install pylocalvoice
+pip install pylocalvoice
 ```
 
 ### Using Poetry
@@ -190,8 +190,8 @@ pip install pyhmong
 # Initialize project
 poetry init
 
-# Add pyhmong
-poetry add pyhmong
+# Add pylocalvoice
+poetry add pylocalvoice
 
 # Install
 poetry install
@@ -199,13 +199,13 @@ poetry install
 
 ## Development Installation
 
-For contributing or developing pyhmong:
+For contributing or developing pylocalvoice:
 
 ### Step 1: Clone Repository
 
 ```bash
-git clone https://github.com/yangnobody12/pyhmong.git
-cd pyhmong
+git clone https://github.com/yangnobody12/pylocalvoice.git
+cd pylocalvoice
 ```
 
 ### Step 2: Create Virtual Environment
@@ -240,21 +240,21 @@ make format
 ### Check Installation
 
 ```bash
-pip show pyhmong
+pip show pylocalvoice
 ```
 
 Expected output:
 ```
-Name: pyhmong
+Name: pylocalvoice
 Version: 0.1.0
-Summary: A professional Python library for Hmong language processing
+Summary: A professional Python library for local voice and Hmong language processing
 ...
 ```
 
 ### Test Import
 
 ```python
-python -c "import pyhmong; print(pyhmong.__version__)"
+python -c "from pylocalvoice from pylocalvoice import pyhmong; print(pyhmong.__version__ if hasattr(pyhmong, '__version__') else '0.1.0')"
 ```
 
 Expected output:
@@ -265,12 +265,12 @@ Expected output:
 ### Run Quick Test
 
 ```python
-python -c "import pyhmong; print(pyhmong.tokenize('Kuv yog neeg Hmoob'))"
+python -c "from pylocalvoice from pylocalvoice import pyhmong; print(pyhmong.normalize_text('kuv yog neeg'))"
 ```
 
 Expected output:
 ```
-['Kuv', 'yog', 'neeg', 'Hmoob']
+Kuv yog neeg
 ```
 
 ### Run Example Script
@@ -299,7 +299,7 @@ sudo dnf install python3-pip  # Fedora
 **Solution 1: Use --user flag**
 
 ```bash
-pip install --user pyhmong
+pip install --user pylocalvoice
 ```
 
 **Solution 2: Use virtual environment** (Recommended)
@@ -307,13 +307,13 @@ pip install --user pyhmong
 ```bash
 python -m venv venv
 source venv/bin/activate
-pip install pyhmong
+pip install pylocalvoice
 ```
 
 **Solution 3: Use sudo** (Not recommended)
 
 ```bash
-sudo pip install pyhmong
+sudo pip install pylocalvoice
 ```
 
 ### Issue: Old Python Version
@@ -375,7 +375,7 @@ which pip
 3. Reinstall:
 ```bash
 pip uninstall pyhmong
-pip install pyhmong
+pip install pylocalvoice
 ```
 
 ### Issue: Conflicting Dependencies
@@ -386,7 +386,7 @@ pip install pyhmong
 # Create fresh virtual environment
 python -m venv fresh_env
 source fresh_env/bin/activate
-pip install pyhmong
+pip install pylocalvoice
 ```
 
 ## Upgrading
@@ -443,7 +443,7 @@ rm -rf venv/  # or rmdir /s venv on Windows
 ### For End Users
 
 ```bash
-pip install pyhmong
+pip install pylocalvoice
 ```
 
 ### For Developers
@@ -460,24 +460,24 @@ pip install -e ".[dev]"
 # .github/workflows/example.yml
 - name: Install pyhmong
   run: |
-    pip install pyhmong
+    pip install pylocalvoice
 ```
 
 ### For Docker
 
 ```dockerfile
 FROM python:3.9-slim
-RUN pip install pyhmong
+RUN pip install pylocalvoice
 ```
 
 ### For Jupyter Notebooks
 
 ```bash
 # In notebook cell
-!pip install pyhmong
+!pip install pylocalvoice
 
 # Then import
-import pyhmong
+from pylocalvoice import pyhmong
 ```
 
 ## Checking Installation Health
@@ -489,20 +489,20 @@ import pyhmong
 pip show pyhmong
 
 # Test import
-python -c "import pyhmong"
+python -c "from pylocalvoice import pyhmong"
 
 # Run example
-python -c "import pyhmong; print(pyhmong.tokenize('test'))"
+python -c "from pylocalvoice import pyhmong; print(pyhmong.tokenize('test'))"
 
 # Check version
-python -c "import pyhmong; print(pyhmong.__version__)"
+python -c "from pylocalvoice import pyhmong; print(pyhmong.__version__)"
 ```
 
 ### Detailed Diagnostics
 
 ```python
 import sys
-import pyhmong
+from pylocalvoice import pyhmong
 
 print(f"Python version: {sys.version}")
 print(f"Python path: {sys.executable}")
@@ -517,8 +517,8 @@ print(dir(pyhmong))
 If you encounter issues:
 
 1. **Check Documentation**: [README.md](README.md)
-2. **Search Issues**: [GitHub Issues](https://github.com/yangnobody12/pyhmong/issues)
-3. **Ask Questions**: [GitHub Discussions](https://github.com/yangnobody12/pyhmong/discussions)
+2. **Search Issues**: [GitHub Issues](https://github.com/yangnobody12/pylocalvoice/issues)
+3. **Ask Questions**: [GitHub Discussions](https://github.com/yangnobody12/pylocalvoice/discussions)
 4. **Contact**: yangnobody12@example.com
 
 ## Next Steps
@@ -535,7 +535,7 @@ After successful installation:
 **Installation successful?** Start using pyhmong:
 
 ```python
-import pyhmong
+from pylocalvoice import pyhmong
 
 text = "Kuv yog neeg Hmoob"
 tokens = pyhmong.tokenize(text)
